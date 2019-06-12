@@ -10,11 +10,11 @@ Ao finalizar, faça commit e envie o link do seu repositório para o email: ital
 
 1) Dê um fork neste projeto, clone e importe no IntelliJ, Eclipse ou IDE de preferência;
 
-2) Crie 2 módulos "maven" com os seguintes nomes:
+2) Crie 2 módulos Maven com os seguintes nomes:
   - acordo-certo-test-service (jar)
   - acordo-certo-test-web (war)
   
-Observe que já existe um "parent" e o acordo-certo-test-domain (jar);
+Estes módulos deverão ser utilizar o "parent" (pom.xml) conforme o módulo "acordo-certo-test-domain", que foi criado como exemplo;
 
 3) Configure o Spring MVC no projeto web (acordo-certo-test-web) através de anotações, sem utilização de XMLs;
 
