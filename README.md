@@ -14,7 +14,7 @@ Ao finalizar, faça commit e envie o link do seu repositório para o email: ital
   - acordo-certo-test-service (jar)
   - acordo-certo-test-web (war)
   
-Estes módulos deverão ser utilizar o "parent" (pom.xml) conforme o módulo "acordo-certo-test-domain", que foi criado como exemplo;
+Estes módulos deverão pertencer ao "parent" (pom.xml) conforme o módulo "acordo-certo-test-domain", que foi criado como exemplo;
 
 3) Configure o Spring MVC no projeto web (acordo-certo-test-web) através de anotações, sem utilização de XMLs;
 
