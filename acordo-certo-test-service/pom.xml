@@ -10,6 +10,16 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>acordo-certo-test-domain</artifactId>
+    <artifactId>acordo-certo-test-service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>br.com.acordocerto</groupId>
+            <artifactId>acordo-certo-test-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.acordocerto</groupId>
+            <artifactId>acordo-certo-test-repository</artifactId>
+        </dependency>
+    </dependencies>
 </project>
