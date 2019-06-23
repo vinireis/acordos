@@ -2,8 +2,8 @@ insert into usuario(email, senha) values ('net@email.com', 'pass');
 insert into usuario(email, senha) values ('sony@email.com', 'pass');
 insert into usuario(email, senha) values ('italo.souza@acordo.com.br', 'pass');
 
-insert into credor(nome, usuario_id ) values ('Net', 1);
-insert into credor(nome, usuario_id ) values ('Sony', 2);
+insert into credor(razao_social, usuario_id ) values ('Net', 1);
+insert into credor(razao_social, usuario_id ) values ('Sony', 2);
 
 insert into devedor(nome, usuario_id ) values ('Italo Souza', 3);
 

@@ -1,5 +1,6 @@
 package br.com.acordocerto.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,12 +21,22 @@ import lombok.NoArgsConstructor;
 public class Credor {
 	@Id @GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
-	@OneToOne
+	private String razaoSocial;
+	private String cnpj;
+	@OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
 	private Usuario usuario;
-	
-	public Credor(String nome, Usuario usuario) {
-		this.nome = nome;
+
+	public Credor(String razaoSocial, String cnpj, Usuario usuario) {
+		this.razaoSocial = razaoSocial;
+		this.cnpj = cnpj;
 		this.usuario = usuario;
+	}
+
+	public String getUsuarioEmail() {
+		return this.usuario.getEmail();
+	}
+
+	public void setSenha(String senha) {
+		this.usuario.setSenha(senha);
 	}
 }
