@@ -37,7 +37,7 @@ public class DividaController {
 	}
 
 	@GetMapping
-	public List<DividaDTO> listar(String razaoSocialDivida) {
+	public List<DividaDTO> listar() {
 		return DividaDTO.converte(dividaService.getDividas());
 	}
 
@@ -52,7 +52,6 @@ public class DividaController {
 			log.error(e.getMessage(), e);
 			return ResponseEntity.badRequest().build();
 		}
-
 	}
 
 	@PutMapping("/{id}")
