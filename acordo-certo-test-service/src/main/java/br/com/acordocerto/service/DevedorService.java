@@ -22,7 +22,7 @@ public class DevedorService {
 		if (nomeDevedor == null) {
 			devedores = devedorRepository.findAll();
 		} else {
-			devedores = devedorRepository.findByNomeContains(nomeDevedor);
+			devedores = devedorRepository.findByNomeContainingIgnoreCase(nomeDevedor);
 		}
 		return devedores;
 	}

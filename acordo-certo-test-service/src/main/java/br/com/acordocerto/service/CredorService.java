@@ -22,7 +22,7 @@ public class CredorService {
 		if (nomeCredor == null) {
 			credores = credorRepository.findAll();
 		} else {
-			credores = credorRepository.findByRazaoSocialContains(nomeCredor);
+			credores = credorRepository.findByRazaoSocialContainingIgnoreCase(nomeCredor);
 		}
 		return credores;
 	}

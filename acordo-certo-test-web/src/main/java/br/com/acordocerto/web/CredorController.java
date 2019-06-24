@@ -34,8 +34,8 @@ public class CredorController {
 	}
 
 	@GetMapping
-	public List<CredorDTO> listar(String nomeCredor) {
-		return CredorDTO.converte(credorService.getCredores(nomeCredor));
+	public List<CredorDTO> listar(String razaoSocialCredor) {
+		return CredorDTO.converte(credorService.getCredores(razaoSocialCredor));
 	}
 
 	@PostMapping

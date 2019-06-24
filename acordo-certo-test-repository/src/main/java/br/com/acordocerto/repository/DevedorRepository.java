@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.acordocerto.domain.Devedor;
 
 public interface DevedorRepository extends JpaRepository<Devedor, Long> {
-	public List<Devedor> findByNomeContains(String nomeDevedor);
+	public List<Devedor> findByNomeContainingIgnoreCase(String nomeDevedor);
 }

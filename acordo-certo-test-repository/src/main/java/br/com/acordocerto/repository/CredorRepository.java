@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.acordocerto.domain.Credor;
 
 public interface CredorRepository extends JpaRepository<Credor, Long> {
-	public List<Credor> findByRazaoSocialContains(String nomeCredor);
+	public List<Credor> findByRazaoSocialContainingIgnoreCase(String razaoSocial);
 }
