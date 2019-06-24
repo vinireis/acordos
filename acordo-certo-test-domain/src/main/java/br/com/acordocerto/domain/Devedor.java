@@ -32,6 +32,10 @@ public class Devedor {
 	@OneToOne(orphanRemoval = true, cascade = CascadeType.ALL)
 	private Usuario usuario;
 
+	public Devedor(Long idDevedor) {
+		this.id = idDevedor;
+	}
+
 	public Devedor(String nome, String cpf, String telefone, Usuario usuario) {
 		this.nome = nome;
 		this.cpf = cpf;

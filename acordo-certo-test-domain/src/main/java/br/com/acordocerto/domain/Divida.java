@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -23,14 +24,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Data
-
+@Builder
 @Entity
 public class Divida {
 	@Id @GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
-	private String titulo;
+	private String descricao;
+	@Builder.Default
 	private LocalDateTime dataCriacao = LocalDateTime.now();
+	private LocalDateTime dataVencimento;
 	@Enumerated(EnumType.STRING)
+	@Builder.Default
 	private StatusDivida status = StatusDivida.VENCIDA;
 	@ManyToOne
 	private Devedor devedor;
@@ -38,5 +42,6 @@ public class Divida {
 	private Credor credor;
 	private BigDecimal valor;
 	@OneToMany(mappedBy = "divida")
+	@Builder.Default
 	private List<Mensagens> mensagens = new ArrayList<>();
 }

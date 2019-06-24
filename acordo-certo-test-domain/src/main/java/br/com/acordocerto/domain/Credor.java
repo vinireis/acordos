@@ -32,6 +32,10 @@ public class Credor {
 		this.usuario = usuario;
 	}
 
+	public Credor(Long idCredor) {
+		this.id = idCredor;
+	}
+
 	public String getUsuarioEmail() {
 		return this.usuario.getEmail();
 	}
@@ -39,4 +43,5 @@ public class Credor {
 	public void setSenha(String senha) {
 		this.usuario.setSenha(senha);
 	}
+
 }
