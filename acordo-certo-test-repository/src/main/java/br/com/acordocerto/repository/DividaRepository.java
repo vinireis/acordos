@@ -8,4 +8,6 @@ import br.com.acordocerto.domain.Divida;
 
 public interface DividaRepository extends JpaRepository<Divida, Long> {
 	public List<Divida> findByDescricaoContainingIgnoreCase(String descricao);
+
+	public List<Divida> findByCredorId(Long idCredor);
 }

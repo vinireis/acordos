@@ -17,7 +17,6 @@ public class CredorService {
 	}
 
 	public List<Credor> getCredores(String nomeCredor) {
-		System.out.println(nomeCredor);
 		List<Credor> credores;
 		if (nomeCredor == null) {
 			credores = credorRepository.findAll();

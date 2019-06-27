@@ -41,6 +41,11 @@ public class DividaController {
 		return DividaDTO.converte(dividaService.getDividas());
 	}
 
+	@GetMapping(value = "/credor/{idCredor}")
+	public List<DividaDTO> listarByIdCredor(@PathVariable Long idCredor) {
+		return DividaDTO.converte(dividaService.getDividasByIdCredor(idCredor));
+	}
+
 	@PostMapping
 	@Transactional
 	public ResponseEntity<DividaDTO> cadastrar(@RequestBody @Valid DividaForm form, UriComponentsBuilder uriBuilder) {

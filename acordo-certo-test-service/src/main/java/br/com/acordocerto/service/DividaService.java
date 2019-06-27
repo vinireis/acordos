@@ -28,6 +28,10 @@ public class DividaService {
 		return dividaRepository.findAll();
 	}
 
+	public List<Divida> getDividasByIdCredor(Long idCredor) {
+		return dividaRepository.findByCredorId(idCredor);
+	}
+
 	public void cadastrar(Divida divida) throws NotFoundException {
 		verificaSeExisteCredor(divida);
 		verificaSeExisteDevedor(divida);
@@ -65,4 +69,5 @@ public class DividaService {
 			throw new NotFoundException("Não existe credor com id = " + divida.getCredor().getId());
 		}
 	}
+
 }

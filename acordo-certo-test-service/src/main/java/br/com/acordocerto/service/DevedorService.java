@@ -17,7 +17,6 @@ public class DevedorService {
 	}
 
 	public List<Devedor> getDevedores(String nomeDevedor) {
-		System.out.println(nomeDevedor);
 		List<Devedor> devedores;
 		if (nomeDevedor == null) {
 			devedores = devedorRepository.findAll();
