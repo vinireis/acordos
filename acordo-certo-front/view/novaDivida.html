@@ -13,6 +13,9 @@
 			<option value="ACORDO_NEGOCIADO">ACORDO NEGOCIADO</option>
 			<option value="QUITADA">QUITADA</option>
 		</select>
+		<label class="btn btn-danger btn-block">
+			<input type="checkbox" ng-model="divida.cobrancaJudicial"> Cobranca Judicial
+		</label>
 	</form>
 	<div ng-show="dividaForm.descricao.$dirty" ng-messages="dividaForm.descricao.$error">
 		<div ng-message="required" class="alert alert-danger">
@@ -23,5 +26,5 @@
 		</div>
 	</div>
 	<button class="btn btn-primary btn-block" ng-click="adicionarDivida(divida)" ng-disabled="dividaForm.$invalid">Adicionar Divida</button>
-	<a class="btn btn-primary" href="#/dividas">Voltar</a>
+	<a class="btn btn-default btn-block" href="#/dividas">Voltar</a>
 </div>
