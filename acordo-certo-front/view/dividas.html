@@ -1,0 +1,22 @@
+<div class="jumbotron">
+	<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
+	<table ng-show="dividas.length > 0" class="table table-striped">
+		<tr>
+			<th></th>
+			<th><a href="" ng-click="ordenarPor('descricao')">Descricao</a></th>
+			<th>Devedor</th>
+			<th><a href="" ng-click="ordenarPor('status')">Status</a></th>
+			<th>Data Vencimento</th>
+		</tr>
+		<tr ng-class="{'selecionado negrito': divida.selecionado}" ng-repeat="divida in dividas | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
+			<td><input type="checkbox" ng-model="divida.selecionado"/></td>
+			<td><a href="#/detalhesDivida/{{divida.id}}">{{divida.descricao}}</a></td>
+			<td>{{divida.devedor.nome  | name}}</td>
+			<td>{{divida.status}}</td>
+			<td>{{divida.dataVencimento | date:'dd/MM/yyyy'}}</td>
+		</tr>
+	</table>
+	<hr/>
+	<a class="btn btn-primary btn-block" href="#/novaDivida">Nova Divida</a>
+	<button class="btn btn-danger btn-block" ng-click="apagarDividas(dividas)" ng-if="isDividaSelecionado(dividas)">Apagar Dividas</button>
+</div>

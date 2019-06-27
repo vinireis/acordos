@@ -1,0 +1,1 @@
+angular.module("acordoCerto", ["ngMessages", "ui", "ngRoute"]);

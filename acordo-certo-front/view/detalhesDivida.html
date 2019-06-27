@@ -1,0 +1,20 @@
+<div class="jumbotron">
+	<table class="table">
+		<tr>
+			<td>{{divida.descricao}}</td>
+		</tr>
+		<tr>
+			<td>{{divida.devedor.nome}}</td>
+		</tr>
+		<tr>
+			<td>{{divida.valor}}</td>
+		</tr>
+		<tr>
+			<td>{{divida.status}}</td>
+		</tr>
+		<tr>
+			<td>{{divida.dataVencimento | date:'dd/MM/yyyy'}}</td>
+		</tr>
+	</table>
+	<a class="btn btn-primary" href="#/dividas">Voltar</a>
+</div>

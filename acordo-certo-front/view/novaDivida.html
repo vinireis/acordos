@@ -1,0 +1,27 @@
+<div class="jumbotron">
+	<form name="dividaForm">
+		<input class="form-control" type="text" ng-model="divida.descricao" name="descricao" placeholder="descricao" ng-required="true" ng-minlength="10"/>
+		<input class="form-control" type="text" ng-model="divida.dataVencimento" name="dataVencimento" placeholder="Data de Vencimento" ui-date/>
+		<input class="form-control" type="text" ng-model="divida.valor" name="valor" placeholder="Valor Dívida"/>
+		<select class="form-control" ng-model="divida.devedor" ng-options="devedor.nome for devedor in devedores | orderBy:'nome'">
+			<option value="">Selecione uma devedor</option>
+		</select>
+		<select class="form-control" ng-model="divida.status">
+			<option value="">Selecione um status</option>
+			<option value="VENCIDA">VENCIDA</option>
+			<option value="EM_NEGOCICAO">EM NEGOCIÇÃO</option>
+			<option value="ACORDO_NEGOCIADO">ACORDO NEGOCIADO</option>
+			<option value="QUITADA">QUITADA</option>
+		</select>
+	</form>
+	<div ng-show="dividaForm.descricao.$dirty" ng-messages="dividaForm.descricao.$error">
+		<div ng-message="required" class="alert alert-danger">
+			Por favor, preencha o campo descrição!
+		</div>
+		<div ng-message="minlength" class="alert alert-danger">
+			O campo descrição deve ter no mínimo 10 caracteres.
+		</div>
+	</div>
+	<button class="btn btn-primary btn-block" ng-click="adicionarDivida(divida)" ng-disabled="dividaForm.$invalid">Adicionar Divida</button>
+	<a class="btn btn-primary" href="#/dividas">Voltar</a>
+</div>
