@@ -44,4 +44,5 @@ public class Divida {
 	@OneToMany(mappedBy = "divida")
 	@Builder.Default
 	private List<Mensagens> mensagens = new ArrayList<>();
+	private boolean cobrancaJudicial;
 }

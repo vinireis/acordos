@@ -31,6 +31,8 @@ public class DividaForm {
 	private BigDecimal valor;
 	@NotNull
 	private StatusDivida status;
+	private boolean cobrancaJudicial;
+	
 	public Divida cadastrar(DividaService dividaService) throws NotFoundException {
 		Divida divida = Divida.builder()
 				.descricao(getDescricao())
@@ -38,6 +40,7 @@ public class DividaForm {
 				.credor(new Credor(idCredor))
 				.devedor(new Devedor(idDevedor))
 				.status(getStatus())
+				.cobrancaJudicial(isCobrancaJudicial())
 				.valor(getValor())
 				.build();
 		dividaService.cadastrar(divida);
